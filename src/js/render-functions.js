@@ -3,9 +3,8 @@ import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-
 const renderFunctions = {
-
+  
   renderMarkup(elements) {
     const markup = elements
       .map(image => {
@@ -41,10 +40,6 @@ const renderFunctions = {
     lightbox.refresh();
   },
 
-  // renderMarkup(markup) {
-  //     document.querySelector('.gallery').insertAdjacentHTML("beforeend", markup);
-  // },
-
   removeMarkup() {
     document.querySelector('.gallery').innerHTML = '';
   },
@@ -57,6 +52,18 @@ const renderFunctions = {
 
   removeLoader() {
     document.querySelector('.loader').remove();
+  },
+
+  loadButtonStatus(pageNumber, maxPage) {
+    if (pageNumber < maxPage) {
+      document.querySelector('.load-button').classList.remove('hidden');
+    } else {
+      document.querySelector('.load-button').classList.add('hidden');
+    }
+  },
+
+  hideLoadButton() {
+    document.querySelector('.load-button').classList.add('hidden');
   },
 };
 

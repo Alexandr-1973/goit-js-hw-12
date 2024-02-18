@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-async function fetchServer(searchText, pageNumber) {
+async function fetchServer(searchText, pageNumber, perPage) {
   const BASE_URL = 'https://pixabay.com';
   const END_POINT = '/api/';
   const API_KEY = '42307570-a64cb029cc8427df0f0b3ddcd';
@@ -11,22 +11,11 @@ async function fetchServer(searchText, pageNumber) {
     orientation: 'horizontal',
     safesearch: true,
     q: searchText,
-    per_page: 15,
+    per_page: perPage,
     page: pageNumber,
   };
   const res = await axios.get(url, { params });
   return res.data;
-};
-
+}
 
 export default fetchServer;
-
-
-// const internetServerInfo = {
-//   BASE_URL: 'https://pixabay.com',
-//   END_POINT: '/api/',
-//   API_KEY: '42307570-a64cb029cc8427df0f0b3ddcd',
-//   constParameters: '&image_type=photo&orientation=horizontal&safesearch=true',
-// };
-
-// export default internetServerInfo;
