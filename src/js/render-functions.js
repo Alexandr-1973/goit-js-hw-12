@@ -6,6 +6,16 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const renderFunctions = {
   
   renderMarkup(elements) {
+
+var lightbox = new SimpleLightbox('.gallery a', {
+  captionPosition: 'bottom',
+  captionsData: 'alt',
+  className: 'modal',
+  /* options */
+});
+    
+   
+
     const markup = elements
       .map(image => {
         const {
@@ -31,12 +41,12 @@ const renderFunctions = {
 
     document.querySelector('.gallery').insertAdjacentHTML('beforeend', markup);
 
-    var lightbox = new SimpleLightbox('.gallery a', {
-      captionPosition: 'bottom',
-      captionsData: 'alt',
-      className: 'modal',
-      /* options */
-    });
+    // var lightbox = new SimpleLightbox('.gallery a', {
+    //   captionPosition: 'bottom',
+    //   captionsData: 'alt',
+    //   className: 'modal',
+    //   /* options */
+    // });
     lightbox.refresh();
   },
 
