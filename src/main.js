@@ -76,65 +76,6 @@ function rendMarkup(elements) {
     })
     .join('');
 
-  // <li class="shoppinglist-book" id="${book._id}">
-  //     <img
-  //       class="shoppinglist-book-image"
-  //       src="${book.book_image}"
-  //       alt="book image"
-  //       width="100"
-  //       height="142"
-  //     />
-  //     <div class="shoppinglist-total-div">
-  //       <div class="shoppinglist-tb-div">
-  //         <div class="shoppinglist-titcat-div">
-  //           <h3 class="shoppinglist-book-title">${book.title}</h3>
-  //           <p class="shoppinglist-book-category">${book.list_name}</p>
-  //         </div>
-
-  //         <button
-  //           type="button"
-  //           class="shoppinglist-book-deletebutton"
-  //         ></button>
-  //       </div>
-
-  //       <div class="shoppinglist-desauthorlink">
-  //         <p class="shoppinglist-book-description">${book.description}</p>
-
-  //         <div class="shoppinglist-low-div">
-  //           <p class="shoppinglist-book-author">${book.author}</p>
-  //           <ul class="shoppinglist-book-low-ul">
-  //             <li class="shoppinglist-book-low-li-amazon">
-  //               <a
-  //                 class="shopping-amazon-link"
-  //                 href="${book.amazon_product_url}"
-  //                 target="_blank"
-  //               >
-  //                 <img
-  //                   class="shopping-listamazon-img"
-  //                   src="./img/amazon.png"
-  //                   alt="logoAmazon"
-  //                 />
-  //               </a>
-  //             </li>
-  //             <li class="shoppinglist-book-low-li-apple">
-  //               <a
-  //                 class="shopping-apple-link"
-  //                 href="${book.buy_links[1].url}"
-  //                 target="_blank"
-  //               >
-  //                 <img
-  //                   class="shopping-apple-img"
-  //                   src="./img/apple.png"
-  //                   alt="logo Apple books"
-  //                 />
-  //               </a>
-  //             </li>
-  //           </ul>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </li>`
-
   shopTitle.insertAdjacentHTML(
     'afterend',
     `<div class="shopinglist-cart"><ul class="shoppinglist-list"></ul></div>`
@@ -176,7 +117,6 @@ function removeEmptyMarkup() {
 }
 
 document.querySelector('.shopping-list').addEventListener('click', event => {
-  event.preventDefault();
   if (event.target.nodeName == 'BUTTON') {
     const bookId = event.target.closest('li').getAttribute('id');
     console.log(bookId);
@@ -195,6 +135,9 @@ if (queryLocalStorage() && queryLocalStorage().length > 0) {
 } else {
   addEmptyMarkup();
 }
+
+
+
 
 // технический код для отрисовки лишек
 
@@ -245,15 +188,6 @@ document.querySelector('.techbutton').addEventListener('click', onTechbutton);
 function onTechbutton() {
   setLS();
 }
-
-
-
-
-
-
-
-
-
 
 // document.querySelector(".techbuttondel").addEventListener("click", onRemoveButton);
 // function onRemoveButton() {
