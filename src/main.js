@@ -174,10 +174,15 @@ function onTechbutton() {
   setLS();
 }
 
-document.querySelector(".techbuttondel").addEventListener("click", onRemoveButton);
-function onRemoveButton() {
-  localStorage.removeItem("addBook")
-}
+// document.querySelector(".techbuttondel").addEventListener("click", onRemoveButton);
+// function onRemoveButton() {
+//   localStorage.removeItem("addBook")
+// }
+
+
+
+
+
 
 
 
