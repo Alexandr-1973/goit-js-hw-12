@@ -10,7 +10,6 @@ import appletabdesk1x from './img/shopping-list/apple-books-tabl-desk-1x.png';
 import appletabdesk2x from './img/shopping-list/apple-books-tabl-desk-2x.png';
 import applemob1x from './img/shopping-list/apple-books-mob-1x.png';
 import sprite from './img/sprite.svg';
-// console.log(deletebuttonsvg);
 import empytabdesk1x from './img/shopping-list/empy-books-tab-desk-1x.png';
 import empytabdesk2x from './img/shopping-list/empy-books-tab-desk-2x.png';
 import emptymob from './img/shopping-list/empty-books-mob.png';
@@ -128,7 +127,7 @@ document.querySelector('.shopping-list').addEventListener('click', event => {
     const deleteElementLi = document.querySelector(`li[id="${bookId}"]`);
     deleteElementLi.remove();
   }
-  if (queryLocalStorage().length === 0) {
+  if (!queryLocalStorage() || queryLocalStorage().length === 0) {
     addEmptyMarkup();
   }
 });
@@ -138,6 +137,9 @@ if (queryLocalStorage() && queryLocalStorage().length > 0) {
 } else {
   addEmptyMarkup();
 }
+
+
+
 
 // технический код для отрисовки лишек
 
@@ -232,9 +234,6 @@ const fromLS = JSON.parse(localStorage.getItem('addBook'));
 function addtoLS(newArray) {
   localStorage.setItem('addBook', JSON.stringify(newArray));
 }
-
-
-
 
 // ДОМАШКА12
 
