@@ -1,4 +1,9 @@
-/* Reset styles */
+@import url('./header.css');
+@import url('./support.css');
+
+
+
+/* reset styles */
 h1,
 h2,
 h3,
@@ -33,6 +38,19 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.shopsupport {
+  display: flex;
+  gap: 40px;
+}
+.support-div {
+  width: 356px;
+  margin-top: 40px;
+}
+
+
+
+
 
 
 /* Shoping-list-with-books */
@@ -424,6 +442,10 @@ img {
   .container {
     min-width: 1394px;
   }
+  .shopping-list {
+  width: 996px;
+  overflow: auto;
+}
 }
 
 
@@ -613,3 +635,4 @@ img {
   display: none;
   opacity: 0;
 } */
+
